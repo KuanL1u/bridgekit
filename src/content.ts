@@ -41,45 +41,45 @@ export const sources: Source[] = [
 
 export const principles: Record<PrincipleId, { name: string; eyebrow: string; description: string; question: string; sourceIds: string[]; color: string }> = {
   listen: {
-    name: 'Start by listening',
+    name: 'Listen first',
     eyebrow: 'People before solutions',
-    description: 'People bring knowledge that a polished prototype cannot replace. Invite their perspectives before deciding what the problem is.',
-    question: 'What are we assuming, and who could help us understand?',
+    description: 'Understand people before choosing a solution.',
+    question: 'Who haven’t we heard from?',
     sourceIds: ['understand', 'prompts'],
     color: 'peach',
   },
   agency: {
-    name: 'Let people define their good',
+    name: 'Let people define success',
     eyebrow: 'Purpose with agency',
-    description: 'Success can look different for each person. Help participants explore their goals and options, and make their own choices.',
-    question: 'Whose definition of success is shaping this decision?',
+    description: 'Let each person decide what a useful outcome looks like.',
+    question: 'What would success look like for you?',
     sourceIds: ['agency'],
     color: 'lilac',
   },
   access: {
     name: 'Make participation possible',
     eyebrow: 'Care in the details',
-    description: 'Consider devices, languages, abilities, resources, and circumstances throughout the experience. Offer people more than one way to take part.',
-    question: 'Who might find it difficult to participate in this format?',
+    description: 'Offer ways to contribute that fit people’s needs and resources.',
+    question: 'Can everyone take part?',
     sourceIds: ['preserve', 'prompts'],
     color: 'yellow',
   },
   community: {
-    name: 'Let the community shape it',
+    name: 'Follow the feedback',
     eyebrow: 'Listen, respond, adapt',
-    description: 'A plan should respond to the people it serves. Ask for feedback, explain your decisions, and change the experience when people show you a better way.',
-    question: 'What will we do differently because of what people told us?',
+    description: 'Ask for feedback. Show what it changes.',
+    question: 'What will we do differently?',
     sourceIds: ['voice', 'prompts'],
     color: 'sage',
   },
 }
 
 export const accessOptions: { id: AccessNeed; label: string; description: string }[] = [
-  { id: 'internet', label: 'Limited internet', description: 'Keep activities available on paper.' },
-  { id: 'devices', label: 'Shared devices', description: 'Avoid needing a phone per person.' },
-  { id: 'quiet', label: 'Time to think quietly', description: 'Make space before group discussion.' },
-  { id: 'language', label: 'Multiple languages', description: 'Plan translation and peer support.' },
-  { id: 'mobility', label: 'Flexible participation', description: 'Offer seated and sensory alternatives.' },
+  { id: 'internet', label: 'Limited internet', description: 'Use paper activities.' },
+  { id: 'devices', label: 'Shared devices', description: 'No phone required.' },
+  { id: 'quiet', label: 'Quiet thinking time', description: 'Pause before discussion.' },
+  { id: 'language', label: 'Multiple languages', description: 'Arrange translation support.' },
+  { id: 'mobility', label: 'Flexible participation', description: 'Offer seated and sensory options.' },
 ]
 
 export const blankContext: WorkshopContext = {
@@ -117,7 +117,7 @@ export const activityTemplates: ActivityTemplate[] = [
     instructions: 'Invite everyone to share what would make this session useful for them. Agree on how to listen, how to disagree with care, and how to pass on a question. Choose the agreements together; nobody needs to share a personal story.',
     prompts: ['What would you like to leave with?', 'What would help you take part comfortably?'],
     alternative: 'Offer a written response, a conversation in pairs, or the option to simply listen. Read the group agreements aloud.',
-    rationale: 'Participants get to shape the experience and define their own goals. The facilitator makes room for several definitions of a useful outcome.',
+    rationale: 'Let participants choose their goals and group agreements.',
     sourceIds: ['agency', 'preserve'],
   },
   {
@@ -130,7 +130,7 @@ export const activityTemplates: ActivityTemplate[] = [
     instructions: 'In pairs, invite people to describe an everyday friction related to the community’s concern. Listen without proposing a fix. Write down what you heard, check that you understood it, and ask permission before sharing it with the group.',
     prompts: ['What makes this experience difficult?', 'What is working that we should keep?', 'What did we hear that challenged an assumption?'],
     alternative: 'People can work alone, speak with a facilitator, or discuss a fictional everyday example. Personal disclosure is optional.',
-    rationale: 'The group begins with people’s experience rather than a presumed technical solution. Curiosity and listening are design skills.',
+    rationale: 'Understanding people comes before choosing a solution.',
     sourceIds: ['understand', 'prompts', 'preserve'],
   },
   {
@@ -143,7 +143,7 @@ export const activityTemplates: ActivityTemplate[] = [
     instructions: 'Map who could be affected by the concern. Separate perspectives present in the room from perspectives the group still needs to hear. Choose one way to invite an absent perspective before making a bigger decision.',
     prompts: ['Whose perspective have we not heard?', 'How could we invite them without speaking for them?'],
     alternative: 'Make a spoken list or use large-print cards. A facilitator can write and read the map aloud; avoid requiring people to move around the room.',
-    rationale: 'Being in the room does not mean everyone affected is represented. Naming uncertainty helps the group include people in defining the work.',
+    rationale: 'Invite missing perspectives before making decisions.',
     sourceIds: ['prompts', 'preserve'],
   },
   {
@@ -156,7 +156,7 @@ export const activityTemplates: ActivityTemplate[] = [
     instructions: 'Use a shared digital board to collect possibilities from each participant. Give everyone quiet time first. Discuss the ideas together, ask who each could help or leave out, and choose a small experiment the group wants to try.',
     prompts: ['Who would this idea help?', 'Who might be left out?', 'What would we learn from a small experiment?'],
     alternative: 'Use paper cards, a spoken round, or a shared device. Read ideas aloud and let people contribute without using a phone.',
-    rationale: 'The people affected help shape the possibilities and decide what is useful. Feedback and shared judgment guide the next experiment.',
+    rationale: 'Let the people affected shape and choose the next experiment.',
     sourceIds: ['voice', 'prompts'],
   },
   {
@@ -169,7 +169,7 @@ export const activityTemplates: ActivityTemplate[] = [
     instructions: 'Invite participants to describe what a useful result would look like for them. Compare the different goals without ranking people’s ambitions. Choose a few signs the group can notice after its small experiment.',
     prompts: ['What would change for you if this worked?', 'Which different goals can this project make room for?'],
     alternative: 'Offer examples of several possible outcomes and invite a private written response or a pass. Avoid framing one career or life path as the correct answer.',
-    rationale: 'A community project can build confidence, agency, access, and opportunity in different ways. People should have a voice in defining those outcomes.',
+    rationale: 'Success belongs to the people defining it.',
     sourceIds: ['agency', 'prompts'],
   },
   {
@@ -182,7 +182,7 @@ export const activityTemplates: ActivityTemplate[] = [
     instructions: 'Ask what helped people participate and what made it difficult. Invite one thing they would change for next time. Explain how the group will review the feedback and when it will share a response.',
     prompts: ['What helped you take part?', 'What should change next time?', 'How would you like to hear what changed?'],
     alternative: 'Collect feedback in conversation, on paper, or with the BridgeKit reflection form. Keep responses optional and avoid collecting names.',
-    rationale: 'Listening has a consequence: the experience changes in response to participants. Closing with a plan to respond keeps the group accountable to people.',
+    rationale: 'Show participants how their feedback changes the plan.',
     sourceIds: ['voice', 'preserve'],
   },
   {
@@ -195,7 +195,7 @@ export const activityTemplates: ActivityTemplate[] = [
     instructions: 'Give each person time to sketch, write, dictate, or describe an idea. Collect ideas on paper or in a spoken list. Read them aloud, discuss who each idea serves, and choose a small experiment together. A phone or internet connection is not required.',
     prompts: ['Whose needs does this idea respond to?', 'How can everyone contribute in a way that works for them?'],
     alternative: 'A partner or facilitator can write or describe ideas. Use large-print paper, seated participation, and spoken descriptions where helpful.',
-    rationale: 'The participation method changes to fit people’s resources. Community voice remains central when access to devices or data differs.',
+    rationale: 'Make ideas possible without a phone or data connection.',
     sourceIds: ['voice', 'preserve', 'prompts'],
   },
   {
@@ -208,7 +208,7 @@ export const activityTemplates: ActivityTemplate[] = [
     instructions: 'Offer a few minutes of quiet reflection on the community’s concern. Participants can write, draw, dictate to a partner, or think. Invite sharing afterward, with the option to pass.',
     prompts: ['What have you noticed that the group should consider?'],
     alternative: 'Provide the prompt in writing and aloud. A person can stay with quiet reflection instead of joining a group conversation.',
-    rationale: 'Different participation styles can reveal perspectives a fast group discussion overlooks. Choosing a format with the group makes inclusion concrete.',
+    rationale: 'Quiet time makes space for different ways of thinking.',
     sourceIds: ['understand', 'preserve'],
   },
 ]

@@ -204,10 +204,10 @@ export function workshopStatus(workshop: Workshop) {
 export function contextGuidance(context: WorkshopContext): string[] {
   const notes: string[] = []
   if (context.accessNeeds.includes('language') || !/^english$/i.test(context.languages.trim())) {
-    notes.push('These starter instructions are in English. Prepare translated prompts with the group and invite language support.')
+    notes.push('Drafts are in English. Prepare translations with your group.')
   }
-  if (context.accessNeeds.includes('mobility')) notes.push('Confirm seated, spoken, and sensory participation options with the group; ask what will help rather than assuming.')
-  if (!context.materials.includes('Paper & pens')) notes.push('Arrange writing materials or a spoken alternative for activities that use paper.')
+  if (context.accessNeeds.includes('mobility')) notes.push('Ask which seated, spoken, or sensory options the group needs.')
+  if (!context.materials.includes('Paper & pens')) notes.push('Bring paper or offer a spoken alternative.')
   return notes
 }
 

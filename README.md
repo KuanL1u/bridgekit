@@ -31,10 +31,10 @@ Built for the hackathon challenge to [scale BRIDGEGOOD’s Design for Social Goo
 
 | Step | What the facilitator does |
 | --- | --- |
-| **1. Your community** | Describe the group, purpose, available time, materials, languages, and participation considerations. |
-| **2. Make a plan** | Start with a timed agenda, explore each activity’s reasoning, and edit, reorder, add, or remove activities. |
-| **3. Listen & adapt** | Capture optional reflections, respond to barriers or ideas, and record an adaptation or a reason to keep the approach. |
-| **4. Pass it on** | Review changes and version history, prepare a handoff, and download or print a kit for another facilitator. |
+| **1. Community** | Describe the group, purpose, available time, materials, languages, and participation considerations. |
+| **2. Plan** | Start with a timed agenda, explore each activity’s reasoning, and edit, reorder, add, or remove activities. |
+| **3. Listen** | Capture optional reflections, respond to barriers or ideas, and record an adaptation or a reason to keep the approach. |
+| **4. Share** | Review changes and version history, prepare a handoff, and download or print a kit for another facilitator. |
 
 The workspace also includes:
 
@@ -82,12 +82,12 @@ The `dist/` directory can be served by a static host. Navigation uses hash route
 ## A three-minute demo
 
 1. Open **A more welcoming campus**, the sample workshop included in a new workspace.
-2. Explore **Make a plan**. Expand an activity to see its instructions, reasoning, sources, and alternative participation format.
-3. Go to **Listen & adapt** and respond to the synthetic reflection about internet access.
+2. Explore **Plan**. Expand an activity to see its instructions, reasoning, sources, and alternative participation format.
+3. Go to **Listen** and respond to the synthetic reflection about internet access.
 4. Choose **Paper-first idea studio**, explain how it helps the group participate, and save the adaptation.
-5. Open **Pass it on**. Compare the original and revised activity, then open **Version history** to inspect the earlier plan.
-6. Choose **Download kit** for a portable JSON file, or **Print / save as PDF** for a facilitator guide.
-7. Use **Import a kit** to continue the plan as a new workshop.
+5. Open **Share**. Compare the original and revised activity, then open **Version history** to inspect the earlier plan.
+6. Choose **Download kit** for a portable JSON file, or **Print / PDF** for a facilitator guide.
+7. Use **Import kit** to continue the plan as a new workshop.
 
 For an already completed example, import [`examples/campus-workshop.bridgekit.json`](examples/campus-workshop.bridgekit.json). This file was generated and imported through the app during verification. It includes the original plan, a feedback-led revision, and source attribution, with no raw reflection records.
 

@@ -22,8 +22,9 @@ export function BridgeMark({ small = false }: { small?: boolean }) {
 export function SourceLinks({ ids }: { ids: string[] }) {
   return <div className="source-links">{[...new Set(ids)].map(id => {
     const source = sources.find(item => item.id === id)
-    return source ? <a key={id} href={source.url} target="_blank" rel="noreferrer">{source.name} · {source.section}<ArrowUpRight size={13} /></a>
-      : <span key={id}>Source reference unavailable: {id}</span>
+    const label = source ? `${source.name} · ${source.section}` : ''
+    return source ? <a key={id} href={source.url} target="_blank" rel="noreferrer" title={label} aria-label={label}>{id === 'brief' ? 'Challenge brief' : `Hack Pack ${source.section.split(' · ')[0]}`}<ArrowUpRight size={13} /></a>
+      : <span key={id} title={id}>Source unavailable</span>
   })}</div>
 }
 
@@ -79,7 +80,7 @@ export function CommunityArt({ compact = false }: { compact?: boolean }) {
     <div className="art-person person-four"><i /><b /></div>
     <div className="art-center"><svg viewBox="0 0 50 50" fill="none"><path d="M15 26c-8-9 4-18 10-9 6-9 18 0 10 9L25 36 15 26Z" stroke="currentColor" strokeWidth="2.3" strokeLinejoin="round" /></svg></div>
     <span className="art-dot dot-one" /><span className="art-dot dot-two" /><span className="art-spark">✳</span>
-    {!compact && <><span className="art-label label-one">Everyone brings something.</span><span className="art-label label-two">Make room for it.</span></>}
+    {!compact && <><span className="art-label label-one">Every voice counts.</span><span className="art-label label-two">Make room.</span></>}
   </div>
 }
 
