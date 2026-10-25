@@ -1,0 +1,486 @@
+{
+  "format": "bridgekit-kit",
+  "schemaVersion": 1,
+  "exportedAt": "2026-10-25T21:49:45.791Z",
+  "attribution": "BridgeKit is a hackathon prototype inspired by BRIDGEGOOD’s Design for Social Good philosophy. Activities are draft adaptations of the BRIDGEGOOD Hack Pack, not official program materials.",
+  "workshop": {
+    "id": "9c3e7eaf-bb71-431e-84f0-e27475db4d03",
+    "context": {
+      "title": "A more welcoming campus",
+      "community": "Community college design club",
+      "location": "Oakland, California",
+      "goal": "Explore what belonging on campus could look like, with the people who use it every day.",
+      "duration": 75,
+      "participants": 12,
+      "languages": "English",
+      "accessNeeds": [],
+      "materials": [
+        "Paper & pens",
+        "Shared screen",
+        "Personal devices"
+      ]
+    },
+    "agenda": [
+      {
+        "templateId": "welcome",
+        "title": "Make space, together",
+        "minutes": 10,
+        "principleId": "agency",
+        "instructions": "Invite everyone to share what would make this session useful for them. Agree on how to listen, how to disagree with care, and how to pass on a question. Choose the agreements together; nobody needs to share a personal story.",
+        "prompts": [
+          "What would you like to leave with?",
+          "What would help you take part comfortably?"
+        ],
+        "alternative": "Offer a written response, a conversation in pairs, or the option to simply listen. Read the group agreements aloud.",
+        "rationale": "Let participants choose their goals and group agreements.",
+        "sourceIds": [
+          "agency",
+          "preserve"
+        ],
+        "id": "4aba3280-e4a4-4c7d-9436-4187a632c807",
+        "adaptation": ""
+      },
+      {
+        "templateId": "listen",
+        "title": "Listen before we frame",
+        "minutes": 15,
+        "principleId": "listen",
+        "instructions": "In pairs, invite people to describe an everyday friction related to the community’s concern. Listen without proposing a fix. Write down what you heard, check that you understood it, and ask permission before sharing it with the group.",
+        "prompts": [
+          "What makes this experience difficult?",
+          "What is working that we should keep?",
+          "What did we hear that challenged an assumption?"
+        ],
+        "alternative": "People can work alone, speak with a facilitator, or discuss a fictional everyday example. Personal disclosure is optional.",
+        "rationale": "Understanding people comes before choosing a solution.",
+        "sourceIds": [
+          "understand",
+          "prompts",
+          "preserve"
+        ],
+        "id": "7ce0a0ec-8f05-446d-9c22-2aa93c086689",
+        "adaptation": ""
+      },
+      {
+        "templateId": "voices",
+        "title": "Notice who is missing",
+        "minutes": 10,
+        "principleId": "access",
+        "instructions": "Map who could be affected by the concern. Separate perspectives present in the room from perspectives the group still needs to hear. Choose one way to invite an absent perspective before making a bigger decision.",
+        "prompts": [
+          "Whose perspective have we not heard?",
+          "How could we invite them without speaking for them?"
+        ],
+        "alternative": "Make a spoken list or use large-print cards. A facilitator can write and read the map aloud; avoid requiring people to move around the room.",
+        "rationale": "Invite missing perspectives before making decisions.",
+        "sourceIds": [
+          "prompts",
+          "preserve"
+        ],
+        "id": "8ee3d9ee-407d-4787-98da-2583ac24e5d1",
+        "adaptation": ""
+      },
+      {
+        "templateId": "paper",
+        "title": "Paper-first idea studio",
+        "minutes": 15,
+        "principleId": "access",
+        "instructions": "Give each person time to sketch, write, dictate, or describe an idea. Collect ideas on paper or in a spoken list. Read them aloud, discuss who each idea serves, and choose a small experiment together. A phone or internet connection is not required.",
+        "prompts": [
+          "Whose needs does this idea respond to?",
+          "How can everyone contribute in a way that works for them?"
+        ],
+        "alternative": "A partner or facilitator can write or describe ideas. Use large-print paper, seated participation, and spoken descriptions where helpful.",
+        "rationale": "Make ideas possible without a phone or data connection.",
+        "sourceIds": [
+          "voice",
+          "preserve",
+          "prompts"
+        ],
+        "id": "94f19594-1713-4b01-b408-c52c71e86e7f",
+        "adaptation": "We're switching to paper and spoken contributions so everyone can take part without a reliable phone or data connection."
+      },
+      {
+        "templateId": "success",
+        "title": "Define your own good",
+        "minutes": 10,
+        "principleId": "agency",
+        "instructions": "Invite participants to describe what a useful result would look like for them. Compare the different goals without ranking people’s ambitions. Choose a few signs the group can notice after its small experiment.",
+        "prompts": [
+          "What would change for you if this worked?",
+          "Which different goals can this project make room for?"
+        ],
+        "alternative": "Offer examples of several possible outcomes and invite a private written response or a pass. Avoid framing one career or life path as the correct answer.",
+        "rationale": "Success belongs to the people defining it.",
+        "sourceIds": [
+          "agency",
+          "prompts"
+        ],
+        "id": "af24a786-0068-4701-8a6b-19335518aa58",
+        "adaptation": ""
+      },
+      {
+        "templateId": "reflect",
+        "title": "Leave the loop open",
+        "minutes": 10,
+        "principleId": "community",
+        "instructions": "Ask what helped people participate and what made it difficult. Invite one thing they would change for next time. Explain how the group will review the feedback and when it will share a response.",
+        "prompts": [
+          "What helped you take part?",
+          "What should change next time?",
+          "How would you like to hear what changed?"
+        ],
+        "alternative": "Collect feedback in conversation, on paper, or with the BridgeKit reflection form. Keep responses optional and avoid collecting names.",
+        "rationale": "Show participants how their feedback changes the plan.",
+        "sourceIds": [
+          "voice",
+          "preserve"
+        ],
+        "id": "04aa8a2b-602a-4a02-945d-8f5a94bc4574",
+        "adaptation": ""
+      }
+    ],
+    "reflections": [],
+    "revisions": [
+      {
+        "id": "6d6a72f7-778f-4b3d-8e19-37e9ee1b69cd",
+        "reflectionId": "",
+        "decision": "adapt",
+        "reason": "We're switching to paper and spoken contributions so everyone can take part without a reliable phone or data connection.",
+        "before": {
+          "templateId": "ideas",
+          "title": "Ideas in the open",
+          "minutes": 15,
+          "principleId": "community",
+          "instructions": "Use a shared digital board to collect possibilities from each participant. Give everyone quiet time first. Discuss the ideas together, ask who each could help or leave out, and choose a small experiment the group wants to try.",
+          "prompts": [
+            "Who would this idea help?",
+            "Who might be left out?",
+            "What would we learn from a small experiment?"
+          ],
+          "alternative": "Use paper cards, a spoken round, or a shared device. Read ideas aloud and let people contribute without using a phone.",
+          "rationale": "Let the people affected shape and choose the next experiment.",
+          "sourceIds": [
+            "voice",
+            "prompts"
+          ],
+          "id": "94f19594-1713-4b01-b408-c52c71e86e7f",
+          "adaptation": ""
+        },
+        "after": {
+          "templateId": "paper",
+          "title": "Paper-first idea studio",
+          "minutes": 15,
+          "principleId": "access",
+          "instructions": "Give each person time to sketch, write, dictate, or describe an idea. Collect ideas on paper or in a spoken list. Read them aloud, discuss who each idea serves, and choose a small experiment together. A phone or internet connection is not required.",
+          "prompts": [
+            "Whose needs does this idea respond to?",
+            "How can everyone contribute in a way that works for them?"
+          ],
+          "alternative": "A partner or facilitator can write or describe ideas. Use large-print paper, seated participation, and spoken descriptions where helpful.",
+          "rationale": "Make ideas possible without a phone or data connection.",
+          "sourceIds": [
+            "voice",
+            "preserve",
+            "prompts"
+          ],
+          "id": "94f19594-1713-4b01-b408-c52c71e86e7f",
+          "adaptation": "We're switching to paper and spoken contributions so everyone can take part without a reliable phone or data connection."
+        },
+        "beforeVersion": 1,
+        "afterVersion": 2,
+        "createdAt": "2026-10-25T21:47:38.889Z"
+      }
+    ],
+    "versions": [
+      {
+        "version": 1,
+        "context": {
+          "title": "A more welcoming campus",
+          "community": "Community college design club",
+          "location": "Oakland, California",
+          "goal": "Explore what belonging on campus could look like, with the people who use it every day.",
+          "duration": 75,
+          "participants": 12,
+          "languages": "English",
+          "accessNeeds": [],
+          "materials": [
+            "Paper & pens",
+            "Shared screen",
+            "Personal devices"
+          ]
+        },
+        "agenda": [
+          {
+            "templateId": "welcome",
+            "title": "Make space, together",
+            "minutes": 10,
+            "principleId": "agency",
+            "instructions": "Invite everyone to share what would make this session useful for them. Agree on how to listen, how to disagree with care, and how to pass on a question. Choose the agreements together; nobody needs to share a personal story.",
+            "prompts": [
+              "What would you like to leave with?",
+              "What would help you take part comfortably?"
+            ],
+            "alternative": "Offer a written response, a conversation in pairs, or the option to simply listen. Read the group agreements aloud.",
+            "rationale": "Let participants choose their goals and group agreements.",
+            "sourceIds": [
+              "agency",
+              "preserve"
+            ],
+            "id": "4aba3280-e4a4-4c7d-9436-4187a632c807",
+            "adaptation": ""
+          },
+          {
+            "templateId": "listen",
+            "title": "Listen before we frame",
+            "minutes": 15,
+            "principleId": "listen",
+            "instructions": "In pairs, invite people to describe an everyday friction related to the community’s concern. Listen without proposing a fix. Write down what you heard, check that you understood it, and ask permission before sharing it with the group.",
+            "prompts": [
+              "What makes this experience difficult?",
+              "What is working that we should keep?",
+              "What did we hear that challenged an assumption?"
+            ],
+            "alternative": "People can work alone, speak with a facilitator, or discuss a fictional everyday example. Personal disclosure is optional.",
+            "rationale": "Understanding people comes before choosing a solution.",
+            "sourceIds": [
+              "understand",
+              "prompts",
+              "preserve"
+            ],
+            "id": "7ce0a0ec-8f05-446d-9c22-2aa93c086689",
+            "adaptation": ""
+          },
+          {
+            "templateId": "voices",
+            "title": "Notice who is missing",
+            "minutes": 10,
+            "principleId": "access",
+            "instructions": "Map who could be affected by the concern. Separate perspectives present in the room from perspectives the group still needs to hear. Choose one way to invite an absent perspective before making a bigger decision.",
+            "prompts": [
+              "Whose perspective have we not heard?",
+              "How could we invite them without speaking for them?"
+            ],
+            "alternative": "Make a spoken list or use large-print cards. A facilitator can write and read the map aloud; avoid requiring people to move around the room.",
+            "rationale": "Invite missing perspectives before making decisions.",
+            "sourceIds": [
+              "prompts",
+              "preserve"
+            ],
+            "id": "8ee3d9ee-407d-4787-98da-2583ac24e5d1",
+            "adaptation": ""
+          },
+          {
+            "templateId": "ideas",
+            "title": "Ideas in the open",
+            "minutes": 15,
+            "principleId": "community",
+            "instructions": "Use a shared digital board to collect possibilities from each participant. Give everyone quiet time first. Discuss the ideas together, ask who each could help or leave out, and choose a small experiment the group wants to try.",
+            "prompts": [
+              "Who would this idea help?",
+              "Who might be left out?",
+              "What would we learn from a small experiment?"
+            ],
+            "alternative": "Use paper cards, a spoken round, or a shared device. Read ideas aloud and let people contribute without using a phone.",
+            "rationale": "Let the people affected shape and choose the next experiment.",
+            "sourceIds": [
+              "voice",
+              "prompts"
+            ],
+            "id": "94f19594-1713-4b01-b408-c52c71e86e7f",
+            "adaptation": ""
+          },
+          {
+            "templateId": "success",
+            "title": "Define your own good",
+            "minutes": 10,
+            "principleId": "agency",
+            "instructions": "Invite participants to describe what a useful result would look like for them. Compare the different goals without ranking people’s ambitions. Choose a few signs the group can notice after its small experiment.",
+            "prompts": [
+              "What would change for you if this worked?",
+              "Which different goals can this project make room for?"
+            ],
+            "alternative": "Offer examples of several possible outcomes and invite a private written response or a pass. Avoid framing one career or life path as the correct answer.",
+            "rationale": "Success belongs to the people defining it.",
+            "sourceIds": [
+              "agency",
+              "prompts"
+            ],
+            "id": "af24a786-0068-4701-8a6b-19335518aa58",
+            "adaptation": ""
+          },
+          {
+            "templateId": "reflect",
+            "title": "Leave the loop open",
+            "minutes": 10,
+            "principleId": "community",
+            "instructions": "Ask what helped people participate and what made it difficult. Invite one thing they would change for next time. Explain how the group will review the feedback and when it will share a response.",
+            "prompts": [
+              "What helped you take part?",
+              "What should change next time?",
+              "How would you like to hear what changed?"
+            ],
+            "alternative": "Collect feedback in conversation, on paper, or with the BridgeKit reflection form. Keep responses optional and avoid collecting names.",
+            "rationale": "Show participants how their feedback changes the plan.",
+            "sourceIds": [
+              "voice",
+              "preserve"
+            ],
+            "id": "04aa8a2b-602a-4a02-945d-8f5a94bc4574",
+            "adaptation": ""
+          }
+        ],
+        "reason": "First plan, grounded in the BRIDGEGOOD Hack Pack",
+        "kind": "initial",
+        "createdAt": "2026-10-25T21:44:27.083Z"
+      },
+      {
+        "version": 2,
+        "agenda": [
+          {
+            "templateId": "welcome",
+            "title": "Make space, together",
+            "minutes": 10,
+            "principleId": "agency",
+            "instructions": "Invite everyone to share what would make this session useful for them. Agree on how to listen, how to disagree with care, and how to pass on a question. Choose the agreements together; nobody needs to share a personal story.",
+            "prompts": [
+              "What would you like to leave with?",
+              "What would help you take part comfortably?"
+            ],
+            "alternative": "Offer a written response, a conversation in pairs, or the option to simply listen. Read the group agreements aloud.",
+            "rationale": "Let participants choose their goals and group agreements.",
+            "sourceIds": [
+              "agency",
+              "preserve"
+            ],
+            "id": "4aba3280-e4a4-4c7d-9436-4187a632c807",
+            "adaptation": ""
+          },
+          {
+            "templateId": "listen",
+            "title": "Listen before we frame",
+            "minutes": 15,
+            "principleId": "listen",
+            "instructions": "In pairs, invite people to describe an everyday friction related to the community’s concern. Listen without proposing a fix. Write down what you heard, check that you understood it, and ask permission before sharing it with the group.",
+            "prompts": [
+              "What makes this experience difficult?",
+              "What is working that we should keep?",
+              "What did we hear that challenged an assumption?"
+            ],
+            "alternative": "People can work alone, speak with a facilitator, or discuss a fictional everyday example. Personal disclosure is optional.",
+            "rationale": "Understanding people comes before choosing a solution.",
+            "sourceIds": [
+              "understand",
+              "prompts",
+              "preserve"
+            ],
+            "id": "7ce0a0ec-8f05-446d-9c22-2aa93c086689",
+            "adaptation": ""
+          },
+          {
+            "templateId": "voices",
+            "title": "Notice who is missing",
+            "minutes": 10,
+            "principleId": "access",
+            "instructions": "Map who could be affected by the concern. Separate perspectives present in the room from perspectives the group still needs to hear. Choose one way to invite an absent perspective before making a bigger decision.",
+            "prompts": [
+              "Whose perspective have we not heard?",
+              "How could we invite them without speaking for them?"
+            ],
+            "alternative": "Make a spoken list or use large-print cards. A facilitator can write and read the map aloud; avoid requiring people to move around the room.",
+            "rationale": "Invite missing perspectives before making decisions.",
+            "sourceIds": [
+              "prompts",
+              "preserve"
+            ],
+            "id": "8ee3d9ee-407d-4787-98da-2583ac24e5d1",
+            "adaptation": ""
+          },
+          {
+            "templateId": "paper",
+            "title": "Paper-first idea studio",
+            "minutes": 15,
+            "principleId": "access",
+            "instructions": "Give each person time to sketch, write, dictate, or describe an idea. Collect ideas on paper or in a spoken list. Read them aloud, discuss who each idea serves, and choose a small experiment together. A phone or internet connection is not required.",
+            "prompts": [
+              "Whose needs does this idea respond to?",
+              "How can everyone contribute in a way that works for them?"
+            ],
+            "alternative": "A partner or facilitator can write or describe ideas. Use large-print paper, seated participation, and spoken descriptions where helpful.",
+            "rationale": "Make ideas possible without a phone or data connection.",
+            "sourceIds": [
+              "voice",
+              "preserve",
+              "prompts"
+            ],
+            "id": "94f19594-1713-4b01-b408-c52c71e86e7f",
+            "adaptation": "We're switching to paper and spoken contributions so everyone can take part without a reliable phone or data connection."
+          },
+          {
+            "templateId": "success",
+            "title": "Define your own good",
+            "minutes": 10,
+            "principleId": "agency",
+            "instructions": "Invite participants to describe what a useful result would look like for them. Compare the different goals without ranking people’s ambitions. Choose a few signs the group can notice after its small experiment.",
+            "prompts": [
+              "What would change for you if this worked?",
+              "Which different goals can this project make room for?"
+            ],
+            "alternative": "Offer examples of several possible outcomes and invite a private written response or a pass. Avoid framing one career or life path as the correct answer.",
+            "rationale": "Success belongs to the people defining it.",
+            "sourceIds": [
+              "agency",
+              "prompts"
+            ],
+            "id": "af24a786-0068-4701-8a6b-19335518aa58",
+            "adaptation": ""
+          },
+          {
+            "templateId": "reflect",
+            "title": "Leave the loop open",
+            "minutes": 10,
+            "principleId": "community",
+            "instructions": "Ask what helped people participate and what made it difficult. Invite one thing they would change for next time. Explain how the group will review the feedback and when it will share a response.",
+            "prompts": [
+              "What helped you take part?",
+              "What should change next time?",
+              "How would you like to hear what changed?"
+            ],
+            "alternative": "Collect feedback in conversation, on paper, or with the BridgeKit reflection form. Keep responses optional and avoid collecting names.",
+            "rationale": "Show participants how their feedback changes the plan.",
+            "sourceIds": [
+              "voice",
+              "preserve"
+            ],
+            "id": "04aa8a2b-602a-4a02-945d-8f5a94bc4574",
+            "adaptation": ""
+          }
+        ],
+        "context": {
+          "title": "A more welcoming campus",
+          "community": "Community college design club",
+          "location": "Oakland, California",
+          "goal": "Explore what belonging on campus could look like, with the people who use it every day.",
+          "duration": 75,
+          "participants": 12,
+          "languages": "English",
+          "accessNeeds": [],
+          "materials": [
+            "Paper & pens",
+            "Shared screen",
+            "Personal devices"
+          ]
+        },
+        "reason": "We're switching to paper and spoken contributions so everyone can take part without a reliable phone or data connection.",
+        "kind": "feedback",
+        "createdAt": "2026-10-25T21:47:38.889Z"
+      }
+    ],
+    "contentVersion": "hack-pack-2026.1",
+    "createdAt": "2026-10-25T21:44:27.083Z",
+    "updatedAt": "2026-10-25T21:47:38.889Z",
+    "sample": true,
+    "ready": false,
+    "handoffNote": ""
+  }
+}

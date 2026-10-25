@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BridgeKit | Four-minute rehearsal</title>
+  <style>
+    :root { --paper:#f7f9f2; --ink:#22332c; --olive:#40523e; --muted:#68746c; --line:#dce2d5; --accent:#cf5738; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:18px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--paper); }
+    button,a { -webkit-tap-highlight-color:transparent; }
+    button { font:inherit; cursor:pointer; color:inherit; }
+    button:focus-visible,a:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
+    header { padding:24px 32px 20px; display:flex; justify-content:space-between; gap:24px; align-items:center; border-bottom:1px solid var(--line); }
+    .brand { font-size:24px; font-weight:750; margin:0; }
+    .sub { color:var(--muted); font-size:16px; margin:4px 0 0; }
+    header a { color:var(--olive); font-size:16px; font-weight:650; white-space:nowrap; }
+    .timer-bar { display:flex; gap:14px; align-items:center; padding:20px 32px; flex-wrap:wrap; }
+    .clock { font-size:36px; font-weight:750; font-variant-numeric:tabular-nums; min-width:102px; }
+    .button { min-height:44px; padding:9px 18px; border-radius:8px; border:1px solid var(--line); background:white; font-size:16px; font-weight:650; }
+    .button.primary { background:var(--olive); color:white; border-color:var(--olive); }
+    .button:hover { filter:brightness(.97); }
+    .timer-note { margin-left:auto; color:var(--muted); font-size:15px; }
+    .progress { height:5px; background:#e4e9dc; }
+    .progress span { height:100%; width:0; background:var(--accent); display:block; transition:width .25s linear; }
+    nav { display:flex; gap:8px; padding:20px 32px; overflow-x:auto; }
+    nav button { flex:0 0 auto; border:1px solid var(--line); background:white; border-radius:8px; padding:10px 14px; font-size:16px; min-height:44px; }
+    nav button[aria-current="step"] { background:#e5ecd9; border-color:var(--olive); font-weight:700; }
+    main { padding:8px 32px 28px; display:grid; grid-template-columns:minmax(0,1.35fr) minmax(340px,1fr); gap:28px; align-items:start; max-width:1800px; margin:auto; }
+    .eyebrow { color:var(--olive); text-transform:uppercase; letter-spacing:.08em; font-size:14px; font-weight:700; margin:0 0 7px; }
+    h1 { font-size:32px; line-height:1.2; letter-spacing:-.02em; margin:0 0 18px; }
+    figure { margin:0; background:white; border:1px solid var(--line); border-radius:12px; padding:10px; }
+    figure img { width:100%; height:auto; display:block; border-radius:5px; }
+    .screen-choices { display:flex; gap:8px; padding-top:12px; flex-wrap:wrap; }
+    .screen-choices button { font-size:15px; background:#f3f5ed; border:1px solid var(--line); border-radius:7px; padding:7px 10px; }
+    .screen-choices button[aria-pressed="true"] { border-color:var(--olive); background:#e5ecd9; font-weight:650; }
+    figcaption { padding:12px 5px 3px; font-size:16px; display:grid; gap:7px; }
+    .cue-num { border-radius:50%; display:inline-flex; background:var(--accent); color:white; width:24px; height:24px; align-items:center; justify-content:center; font-size:14px; font-weight:700; margin-right:6px; }
+    .card { background:white; border:1px solid var(--line); border-radius:12px; padding:24px; }
+    .talk { font-size:22px; line-height:1.65; margin:0 0 24px; }
+    .actions { border-top:1px solid var(--line); padding-top:18px; }
+    .actions h2 { font-size:17px; margin:0 0 9px; }
+    .actions ol { padding-left:24px; margin:0; display:grid; gap:8px; font-size:17px; }
+    .proof { color:var(--muted); margin:20px 0 0; font-size:16px; }
+    .controls { display:flex; gap:12px; margin-top:18px; flex-wrap:wrap; }
+    .reason { margin:20px 0 0; padding:18px; background:#f6efda; border:1px solid #e7ddbf; border-radius:10px; }
+    .reason p { font-size:17px; margin:0 0 12px; }
+    .details { max-width:1800px; margin:auto; padding:0 32px 36px; display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    details { border:1px solid var(--line); border-radius:10px; padding:16px 20px; background:white; }
+    summary { cursor:pointer; font-weight:650; }
+    details li { margin:10px 0; font-size:17px; }
+    details a { color:var(--olive); }
+    footer { padding:20px 32px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
+    footer a { color:var(--olive); }
+    .video-panel { max-width:1100px; margin:0 auto 28px; padding:0 32px; }
+    video { width:100%; border-radius:12px; background:var(--ink); border:1px solid var(--line); }
+    .video-panel p { font-size:16px; color:var(--muted); }
+    [hidden] { display:none !important; }
+    @media(max-width:950px) {
+      main { grid-template-columns:1fr; }
+      .details { grid-template-columns:1fr; }
+      .talk { font-size:21px; }
+      .timer-note { margin-left:0; }
+    }
+    @media(max-width:500px) {
+      header,.timer-bar,nav { padding-left:18px; padding-right:18px; }
+      header { flex-wrap:wrap; }
+      main { padding:8px 18px 22px; }
+      .details,.video-panel { padding-left:18px; padding-right:18px; }
+      h1 { font-size:28px; }
+      .card { padding:20px; }
+      .clock { min-width:90px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div><p class="brand">BridgeKit · Four-minute rehearsal</p><p class="sub">One barrier. A thoughtful change. A useful handoff.</p></div>
+    <a id="live-link" href="http://127.0.0.1:5180/#/workshops" target="_blank" rel="noopener">Open live app ↗</a>
+  </header>
+  <div class="timer-bar">
+    <span class="clock" id="clock" aria-label="Time remaining">4:00</span>
+    <button class="button primary" id="start">Start 4-minute timer</button>
+    <button class="button" id="restart">Restart</button>
+    <button class="button" id="video-toggle" aria-expanded="false">Watch 75-second demo</button>
+    <span class="timer-note">Space: pause · Arrows: previous / next</span>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Rehearsal progress" aria-valuemin="0" aria-valuemax="240" aria-valuenow="0"><span id="progress-fill"></span></div>
+  <nav id="stage-nav" aria-label="Presentation beats"></nav>
+  <section class="video-panel" id="video-panel" hidden>
+    <video controls preload="metadata" poster="images/01-plan.jpg" aria-label="75-second captioned BridgeKit workflow demo">
+      <source src="bridgekit-75s-demo.mp4" type="video/mp4">
+    </video>
+    <p>An edited walkthrough of actual app screenshots with click highlights. All sample data is fictional.</p>
+  </section>
+  <main>
+    <section>
+      <p class="eyebrow" id="range"></p>
+      <h1 id="stage-title" aria-live="polite"></h1>
+      <figure>
+        <img id="screen" src="images/01-plan.jpg" alt="The starting workshop plan with numbered click cues">
+        <div class="screen-choices" id="screen-choices" role="group" aria-label="Screens for this beat"></div>
+        <figcaption id="screen-cues"></figcaption>
+      </figure>
+      <div class="controls">
+        <button class="button" id="previous">← Previous beat</button>
+        <button class="button" id="next">Next beat →</button>
+      </div>
+    </section>
+    <section class="card">
+      <p class="eyebrow">Say this</p>
+      <p class="talk" id="say"></p>
+      <div class="actions"><h2>Click / point</h2><ol id="actions"></ol></div>
+      <p class="proof" id="proof"></p>
+      <div class="reason" id="reason-panel" hidden><p id="reason-text"></p><button class="button" id="copy-reason">Copy decision reason</button></div>
+    </section>
+  </main>
+  <div class="details">
+    <details><summary>Prepare and reset</summary><ol id="prepare"></ol><p><a href="demo-kit.bridgekit.json" download>Completed demo kit</a> for a backup import.</p></details>
+    <details><summary>If time is tight</summary><ul id="fallback"></ul><p>At 3:30, stop clicking and deliver the closing.</p></details>
+    <details><summary>Judge questions</summary><div id="faq"></div></details>
+    <details><summary>Full script and printable cards</summary><p><a href="README.md">Full script with every screenshot</a></p><p><a href="../../output/pdf/bridgekit-four-minute-presentation.pdf">Printable rehearsal cards</a></p><p>The script has 355 words, with time reserved for interaction.</p></details>
+  </div>
+  <footer>Draft hackathon activities inspired by BRIDGEGOOD. Community outcomes are a pilot question. <a href="../../README.md">Project README</a></footer>
+  <script id="presentation-data" type="application/json">{"title": "BridgeKit: carry the learning forward", "duration": 240, "reason": "We're switching to paper and spoken contributions so everyone can take part without a reliable phone or data connection.", "story": "A phone-access barrier changes a workshop activity. The next facilitator receives the plan, its history, and the reason for the change.", "stages": [{"id": 1, "start": 0, "end": 25, "title": "Frame the challenge", "screen": "Plan", "images": ["01-plan"], "actions": ["Begin inside the sample workshop on Plan, with v1 visible.", "Point to Ideas in the open. Keep the opening focused on the challenge."], "say": "BRIDGEGOOD's Design for Social Good mindset grows through people, mentorship, and relationships. As the organization scales, that knowledge needs to travel beyond any one person. BridgeKit helps a facilitator practice the philosophy in a workshop, act on feedback, and pass the learning to the next community.", "proof": "The unit of sharing is a workshop with its reasoning and learning."}, {"id": 2, "start": 25, "end": 60, "title": "Make the reasoning teachable", "screen": "Plan", "images": ["02-reasoning", "01-plan"], "actions": ["Expand Ideas in the open.", "Scroll within the page and open Why it helps and Participation options.", "Point to the reason and Hack Pack source links. Keep source pages for Q&A."], "say": "I'm starting with a fictional campus workshop. Each activity carries instructions, the reason behind them, a BRIDGEGOOD source, and another way to participate. The next facilitator can explain why the activity exists, then adapt it for the people in their room. That makes the philosophy practical and teachable.", "proof": "BRIDGEGOOD's reasoning and attribution are connected to an activity people can practice."}, {"id": 3, "start": 60, "end": 90, "title": "Listen to an access barrier", "screen": "Listen", "images": ["03-feedback"], "actions": ["Click Listen in the step bar, or Next: listen.", "Find the first Barrier card about phone or data access.", "Read its observation, then click Respond on that card."], "say": "Now let's test the plan against the people using it. This demo feedback says the digital board was hard to join without a reliable phone or data connection. That is a concrete access barrier. I'll respond by deciding what needs to change.", "proof": "Community experience becomes the trigger for a facilitator decision."}, {"id": 4, "start": 90, "end": 135, "title": "Make and explain a choice", "screen": "Respond to feedback", "images": ["05-decision", "04-choice", "06-response-saved"], "actions": ["Review Change activity and Start from: Paper-first idea studio. Both are already selected for this sample barrier.", "Scroll inside the dialog to Why this choice?, and paste the prepared reason.", "Click Save change. Confirm the card now says Adapted."], "say": "BridgeKit asks the facilitator to make a choice. I'm choosing Paper-first idea studio, where people can sketch, write, dictate, or speak without a phone. I'll record the reason: we are changing the format so everyone can contribute without reliable phone data. We could also keep an activity and explain why. The facilitator stays in control; the tool preserves the decision and its reasoning.", "proof": "A human chooses the adaptation and explains why it fits this group."}, {"id": 5, "start": 135, "end": 170, "title": "Show what changed", "screen": "Share", "images": ["07-before-after", "08-history"], "actions": ["Scroll to the step bar and click Share.", "Scroll to What changed. Point to the original activity, the paper activity, and Why it changed.", "Click Version history; point to v1 Original and v2 Feedback. Close the dialog."], "say": "Here is the result: the digital activity becomes a paper activity, and the reason is visible beside the change. Version history keeps the original plan. We are passing on a way to make thoughtful decisions, so the next facilitator can understand the choice and respond to their own group.", "proof": "Learning is visible, and the original remains available."}, {"id": 6, "start": 170, "end": 210, "title": "Carry the learning forward", "screen": "Share, then imported Plan", "images": ["09-export", "10-imported-plan", "11-feedback-excluded"], "actions": ["Scroll to Share your kit and click Download kit.", "Scroll to the top bar and click Import kit. Select the just-downloaded a-more-welcoming-campus-bridgekit JSON file; duplicate filenames may have a number suffix.", "Confirm the new workshop has Paper-first idea studio and v2. Keep the extra Listen check for Q&A if time is tight."], "say": "I'll download the kit and import it as a new workshop, simulating a handoff to another facilitator. The revised activity and its history come with it. Raw feedback is excluded; reasons and edited instructions still need review before sharing. The next community gets a useful starting point and room to make its own choices.", "proof": "An actual export/import carries the revised plan and history to a new workshop."}, {"id": 7, "start": 210, "end": 240, "title": "Close with the pilot question", "screen": "Imported Plan", "images": ["10-imported-plan"], "actions": ["Stop clicking and look at the audience.", "Finish on the imported plan. Emphasize the next facilitator and the pilot."], "say": "Our answer to scaling BRIDGEGOOD is to carry the mindset through decisions people can explain and improve. This is a working browser prototype with draft activities. Next, we want BRIDGEGOOD's review and a pilot testing whether a new facilitator can use a kit independently, and whether participants have meaningful ways to take part.", "proof": "The next milestone is useful independent reuse, evaluated with the community."}], "scenes": [{"image": "01-plan", "seconds": 8, "title": "Plan with your community", "caption": "Start with activities that carry their reasons."}, {"image": "02-reasoning", "seconds": 6, "title": "Make the philosophy practical", "caption": "Reasons, sources, and participation choices stay connected."}, {"image": "03-feedback", "seconds": 7, "title": "Listen to an access barrier", "caption": "Demo feedback: the digital board needs reliable phone data."}, {"image": "04-choice", "seconds": 6, "title": "The facilitator decides", "caption": "Review the suggested paper alternative and choose what fits."}, {"image": "05-decision", "seconds": 9, "title": "Explain the choice", "caption": "Record why this change helps the group. Save the decision."}, {"image": "06-response-saved", "seconds": 4, "title": "Feedback becomes a response", "caption": "The activity changes, and the reason stays visible."}, {"image": "07-before-after", "seconds": 8, "title": "Show what changed", "caption": "Original activity, adapted activity, and the reason for the change."}, {"image": "08-history", "seconds": 6, "title": "Keep the original", "caption": "The earlier plan remains available in version history."}, {"image": "09-export", "seconds": 6, "title": "Share a reusable kit", "caption": "Export the plan and its learning. Raw feedback stays local."}, {"image": "10-imported-plan", "seconds": 8, "title": "Let another facilitator continue", "caption": "Import creates a new workshop with the revised plan and history."}, {"image": "11-feedback-excluded", "seconds": 5, "title": "Keep raw feedback local", "caption": "The receiving workshop starts with zero raw feedback records."}, {"image": null, "seconds": 2, "title": "Carry the reasoning forward.", "caption": "Practice. Listen. Decide. Share."}], "prepare": ["Use a desktop-width window. Start the app with npm run dev and open the address Vite prints.", "Click Try a sample in the left sidebar. Confirm v1, Ideas in the open, and an open phone-data Barrier in Listen; return to Plan.", "Keep the sample context unchanged. Selecting Limited internet before rebuilding would start with paper and remove the before/after story.", "Copy the prepared reason before presenting. Scroll inside the response dialog to reach the reason and Save change.", "Rehearse download/import once and leave the file picker in Downloads. During the live demo, choose the newest exported kit.", "After a completed practice, click Try a sample to open an unadapted sample or create one. Confirm v1 before the next run."], "fallback": ["At 2:50, move to sharing. The v1/v2 rows are enough; save opening every historical activity for Q&A.", "If the file picker stalls, close it and use the imported-plan screenshot. Say: 'This is the imported example from our rehearsal.'", "At 3:30, stop clicking and deliver the closing. Keep setup, library browsing, print dialogs, and technical details for Q&A.", "Keep the PDF and 75-second captioned demo locally available as backups."], "faq": [{"question": "Why does this address the challenge?", "answer": "It connects BRIDGEGOOD's reasoning to practice, makes feedback decisions explainable, and passes that learning to another facilitator."}, {"question": "Is there AI or a backend?", "answer": "The MVP uses deterministic planning rules and browser localStorage. Facilitators choose adaptations. Accounts, shared sessions, and cloud synchronization are future work."}, {"question": "What is protected when a kit is shared?", "answer": "Raw reflection records are excluded, and handoff notes start excluded. Context, decision reasons, and edited activity text are shared, so facilitators review them before exporting."}, {"question": "What impact has been measured?", "answer": "The current evidence is a working prototype and verified handoff. A pilot should test independent facilitator reuse, useful feedback decisions, and participant choice. Community outcomes have not yet been measured."}, {"question": "Why are two feedback items still open?", "answer": "The four-minute demo completes one decision. The remaining feedback stays visible for review; the kit is an evolving draft."}, {"question": "Are these official BRIDGEGOOD materials?", "answer": "They are draft hackathon adaptations connected to the Hack Pack. BRIDGEGOOD review is a next step."}], "cues": {"01-plan": ["Expand Ideas in the open", "Try a sample before presenting"], "02-reasoning": ["Reason + BRIDGEGOOD sources", "Another way to participate"], "03-feedback": ["Listen to the access barrier", "Click Respond"], "04-choice": ["The facilitator chooses", "Paper-first draft is suggested"], "05-decision": ["Explain why this serves the group", "Click Save change"], "06-response-saved": ["Feedback changed the activity"], "07-before-after": ["Original activity → adapted activity", "The reason travels with the change"], "08-history": ["v2: feedback-led change", "v1: original plan remains available"], "09-export": ["Download the reusable kit", "Raw feedback stays on this device", "Import it as a new workshop"], "10-imported-plan": ["A new workshop keeps the paper activity", "The version history travels too"], "11-feedback-excluded": ["No raw feedback in the receiving workshop", "0 reflections after import"]}}</script>
+  <script>
+    const data = JSON.parse(document.getElementById('presentation-data').textContent);
+    const $ = (id) => document.getElementById(id);
+    let current = 0;
+    let shot = 0;
+    let running = false;
+    let elapsed = 0;
+    let startAt = 0;
+    const clock = (seconds) => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
+    const names = { '01-plan':'Starting plan', '02-reasoning':'Reason and alternatives', '03-feedback':'Access barrier',
+      '04-choice':'Review the choice', '05-decision':'Reason and Save change', '06-response-saved':'Saved response',
+      '07-before-after':'Before / after', '08-history':'Original and revised versions', '09-export':'Download / import',
+      '10-imported-plan':'New workshop', '11-feedback-excluded':'Feedback excluded' };
+    function list(id, items) {
+      $(id).replaceChildren(...items.map(text => { const li = document.createElement('li'); li.textContent = text; return li; }));
+    }
+    function renderShot() {
+      const s = data.stages[current], name = s.images[shot];
+      $('screen').src = `images/${name}.jpg`;
+      $('screen').alt = `${s.screen}: ${names[name]}, with numbered visual cues`;
+      $('screen-cues').replaceChildren(...data.cues[name].map((text, i) => {
+        const p = document.createElement('div'), b = document.createElement('span');
+        b.className = 'cue-num'; b.textContent = i + 1;
+        p.append(b, document.createTextNode(text)); return p;
+      }));
+      $('screen-choices').replaceChildren(...s.images.map((name, i) => {
+        const b = document.createElement('button'); b.textContent = names[name];
+        b.setAttribute('aria-pressed', String(i === shot));
+        b.addEventListener('click', () => { shot = i; renderShot(); }); return b;
+      }));
+      $('screen-choices').hidden = s.images.length < 2;
+    }
+    function renderStage() {
+      const s = data.stages[current];
+      $('range').textContent = `${clock(s.start)} - ${clock(s.end)} / ${s.screen}`;
+      $('stage-title').textContent = s.title;
+      $('say').textContent = s.say;
+      $('proof').textContent = `Show the judges: ${s.proof}`;
+      list('actions', s.actions);
+      $('reason-panel').hidden = s.id !== 4;
+      $('previous').disabled = current === 0;
+      $('next').disabled = current === data.stages.length - 1;
+      document.querySelectorAll('[data-beat]').forEach((b, i) => {
+        if (i === current) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current');
+      });
+      renderShot();
+    }
+    function updateClock() {
+      if (running) elapsed = Math.min(data.duration, (performance.now() - startAt) / 1000);
+      $('clock').textContent = clock(Math.max(0, data.duration - Math.floor(elapsed)));
+      $('progress-fill').style.width = `${elapsed / data.duration * 100}%`;
+      document.querySelector('.progress').setAttribute('aria-valuenow', Math.floor(elapsed));
+      const index = data.stages.findIndex(s => elapsed < s.end);
+      const target = index < 0 ? data.stages.length - 1 : index;
+      if (target !== current) { current = target; shot = 0; renderStage(); }
+      if (elapsed >= data.duration && running) {
+        running = false; $('start').textContent = 'Replay rehearsal';
+      }
+    }
+    function jump(index) {
+      current = Math.max(0, Math.min(data.stages.length - 1, index));
+      elapsed = data.stages[current].start; shot = 0;
+      if (running) startAt = performance.now() - elapsed * 1000;
+      renderStage(); updateClock();
+    }
+    function toggleTimer() {
+      if (elapsed >= data.duration) { elapsed = 0; current = 0; shot = 0; renderStage(); }
+      if (running) { updateClock(); running = false; $('start').textContent = 'Resume timer'; }
+      else { startAt = performance.now() - elapsed * 1000; running = true; $('start').textContent = 'Pause timer'; }
+    }
+    const beatLabels = ['Opening', 'Why', 'Feedback', 'Decision', 'Change', 'Handoff', 'Closing'];
+    $('stage-nav').replaceChildren(...data.stages.map((s, i) => {
+      const b = document.createElement('button'); b.dataset.beat = i;
+      b.textContent = `${s.id} · ${beatLabels[i]}`;
+      b.addEventListener('click', () => jump(i)); return b;
+    }));
+    $('start').addEventListener('click', toggleTimer);
+    $('restart').addEventListener('click', () => {
+      running = false; elapsed = 0; current = 0; shot = 0;
+      $('start').textContent = 'Start 4-minute timer'; renderStage(); updateClock();
+    });
+    $('previous').addEventListener('click', () => jump(current - 1));
+    $('next').addEventListener('click', () => jump(current + 1));
+    $('video-toggle').addEventListener('click', () => {
+      $('video-panel').hidden = !$('video-panel').hidden;
+      $('video-toggle').setAttribute('aria-expanded', String(!$('video-panel').hidden));
+      if ($('video-panel').hidden) document.querySelector('video').pause();
+    });
+    $('reason-text').textContent = data.reason;
+    $('copy-reason').addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(data.reason); $('copy-reason').textContent = 'Copied'; }
+      catch { $('copy-reason').textContent = 'Select the reason text above to copy'; }
+    });
+    list('prepare', data.prepare); list('fallback', data.fallback);
+    $('faq').replaceChildren(...data.faq.map(item => {
+      const block = document.createElement('div'), q = document.createElement('p'), a = document.createElement('p');
+      q.style.fontWeight = '700'; q.textContent = item.question; a.textContent = item.answer;
+      block.append(q, a); return block;
+    }));
+    if (location.protocol !== 'file:') $('live-link').href = `${location.origin}/#/workshops`;
+    document.addEventListener('keydown', e => {
+      if (e.key === ' ') { e.preventDefault(); toggleTimer(); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); jump(current + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); jump(current - 1); }
+    });
+    renderStage(); updateClock(); setInterval(updateClock, 250);
+  </script>
+</body>
+</html>

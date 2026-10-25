@@ -101,6 +101,8 @@ Deploy the contents of `dist/` to an HTTPS static host. Hash-based navigation wo
 
 For a completed example, import [`examples/campus-workshop.bridgekit.json`](examples/campus-workshop.bridgekit.json). It includes an original plan, a feedback-led revision, and source attribution. Raw feedback records are excluded.
 
+For a judge walkthrough, use the [four-minute presentation guide](docs/presentation/README.md), with a timed script, numbered click cues, printable cards, and a 75-second demo.
+
 ## Data and privacy
 
 | Location | Contents |
